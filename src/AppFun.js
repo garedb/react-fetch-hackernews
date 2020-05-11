@@ -8,9 +8,9 @@ import './App.css';
 // Constants
 const API_URL = 'http://hn.algolia.com/api/v1/search?query='
 const DEFAULT_QUERY = 'react'
-const DEFAULT_NAME = 'Brandi'
+const DEFAULT_NAME = 'Gared'
 
-function App() {
+function AppFun() {
   // State variables
   let [data, setData] = useState({ hits: [] })
   let [name, setName] = useState(DEFAULT_NAME)
@@ -76,6 +76,11 @@ function App() {
     <div className="App">
       <header className="App-header">
         <h1>{name}'s News Feed</h1>
+              <input 
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+              />
       </header>
       <main>
         <div className="search">
@@ -101,4 +106,4 @@ function App() {
   );
 }
 
-export default App;
+export default AppFun;
